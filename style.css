@@ -11,13 +11,13 @@
     --a-fs: .7rem;    --a-fs-media: 1.1rem;
     --li-fs: .7rem;   --li-fs-media: 1.1rem;    
 
-    --clr-bg-main: #ddf1f1;
-    --clr-bg-pri: #a9e5e7;
+    --clr-bg-main: #e5eaf8;
+    --clr-bg-pri: #e5eaf8;
     --clr-bg-sec: #f3fafa;
     --clr-acc-main: #00bea6;
     --clr-acc-pri: #009885;
     --clr-acc-sec: #33cbb8;
-    --clr-acc-thi: #d80000;
+    --clr-acc-thi: #107dac;
     --clr-acc-four: #ad0000;
     --clr-acc-fif: #e03333;
     --clr-text-main: #67696a;
@@ -162,6 +162,23 @@ nav ul {
 
 }
 
+nav ul li {
+    border-radius: .3rem;
+    padding: .5rem 1rem;
+    transition: .3s;
+}
+
+nav ul li.active {
+    background-color: var(--clr-bg-pri);
+}
+
+nav ul li:hover {
+    background: var(--clr-bg-sec);
+    border-radius: .3rem;
+    padding: .5rem 1rem;
+    cursor: pointer;
+}
+
 .container form {
     width: 8rem;
     min-width: 250px;
@@ -188,6 +205,7 @@ nav ul {
 }
 
 .user img {
+    min-width: 4rem;
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
@@ -203,8 +221,18 @@ nav ul {
     display: flex;
     gap: 1rem;
     padding: 1rem;
-    border-radius: .3rem;
-    background-color: #33cbb8;
+    border-radius: .7rem;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.user:hover {
+    box-shadow: 0px 8px 30px -10px var(--clr-acc-sec);
+}
+
+.user.active {
+    box-shadow: 0px 8px 30px -10px var(--clr-acc-thi);
+    
 }
 
 .details {
@@ -216,9 +244,46 @@ nav ul {
     margin-bottom: .5rem;
 }
 
+.details .tag {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .2rem;
+}
+
 .details span {
     font-size: .7rem;
     border: 1px solid lightgray;
     border-radius: 3rem;
     padding: 0 .3rem;
+}
+
+@media screen and (max-width: 715px) {
+    .container {
+        padding: 1rem .5rem;
+        min-width: 350px;
+    }
+
+    h2 {
+        text-align: center;
+    }
+    
+    header {
+        flex-direction: column;
+    }    
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 1rem;
+        gap: .2rem;
+    }
+
+    .users {
+        grid-template-columns: 100%;
+    }
+
+    .user {
+        width: 400px;
+        margin: 0 auto;
+    }
+
 }
